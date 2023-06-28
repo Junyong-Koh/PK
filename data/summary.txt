@@ -26,3 +26,7 @@ Data summary(pk-db .csv data + smiles.csv)
   (13) individual_pk: key for individuals.csv
   -> (12) + (13): patient_pk(group_pk + individual_pk)
   
+2. groups.csv
+  (1) group_pk: Key value
+  (2) measurement_type: type of information(healthy + disease + medication)
+  (3) choice: information corresponding to measurement_type
