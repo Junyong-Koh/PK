@@ -30,3 +30,19 @@ Data summary(pk-db .csv data + smiles.csv)
   (1) group_pk: Key value
   (2) measurement_type: type of information(healthy + disease + medication)
   (3) choice: information corresponding to measurement_type
+
+3. individuals.csv
+  (1) individual_pk: Key value
+  (2) measurement_type: type of information(healthy + disease + medication)
+  (3) choice: information corresponding to measurement_type
+
+4. interventions.csv
+  (1) intervention_pk: Key value
+  (2) route_label: "intravenous (iv)" or "oral (po)"
+  (3) substance_label: drug
+  (4) application_label: "single dose"
+  (5) dose
+
+5. smiles.csv
+  (1) durg
+  (2) cano_smiles: SMILES 
