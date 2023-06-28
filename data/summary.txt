@@ -20,7 +20,7 @@ Data summary(pk-db .csv data + smiles.csv)
   (10) mean: average pk value(+ with sd value)
   -> (9) + (10): pk(use mean value as one pk value)
 
-  (11) substance_label: target for pk value
+  (11) substance_label: Key for smiles.csv
 
   (12) group_pk: key for groups.csv
   (13) individual_pk: key for individuals.csv
@@ -44,5 +44,5 @@ Data summary(pk-db .csv data + smiles.csv)
   (5) dose
 
 5. smiles.csv
-  (1) durg
+  (1) durg: Key(substacne_label)
   (2) cano_smiles: SMILES 
