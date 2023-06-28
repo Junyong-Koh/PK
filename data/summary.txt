@@ -1,1 +1,12 @@
 Data summary(pk-db .csv data + smiles.csv)
+
+1. timecourses.csv
+  (1) study_name
+  (2) label: pk graph name
+  -> (1) + (2): Key(FILTER1)
+
+  (3) intervetion_pk: key for interventions.csv + single dose(FILTER2)
+
+  (4) tissue_label: plasma
+  (5) measurement_type_label: concentration
+  (6) unit: gram / L
