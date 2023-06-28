@@ -18,7 +18,7 @@ Data summary(pk-db .csv data + smiles.csv)
 
   (9) value: pk value
   (10) mean: average pk value(+ with sd value)
-  -> (9) + (10): pk value(use mean value as one pk value)
+  -> (9) + (10): pk(use mean value as one pk value)
 
   (11) substance_label: target for pk value
 
