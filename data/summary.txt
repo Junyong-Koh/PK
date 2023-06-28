@@ -9,4 +9,14 @@ Data summary(pk-db .csv data + smiles.csv)
 
   (4) tissue_label: plasma
   (5) measurement_type_label: concentration
-  (6) unit: gram / L
+  (6) unit: gram / liter
+  -> (4) + (5) + (6): Condition(FILTER3)
+
+  (7) time
+  (8) unit: hr, min
+  -> (7) + (8): time data(convert min to hr)
+
+  (9) value: pk value
+  (10) mean: average pk value(+ with sd value)
+  -> (9) + (10): pk value(use mean value as one pk value)
+
