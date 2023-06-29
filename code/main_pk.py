@@ -1,5 +1,17 @@
+import random
+import numpy as np
+
+import torch
+
 from Make_NewData_all_time_final.py import *
 
+def set_random_seed(seed = 0):
+  random.seed(seed)
+  np.random.seed(seed)
+  torch.manual_seed(seed)
+  if torch.cuda.is_available():
+      torch.cuda.manual_seed(seed)
+      
 ### Data parameter
 SEED = 123
 BATCH_SIZE = 1
@@ -18,3 +30,6 @@ N_LAYERS_RNN = 1
 
 N_EPOCHS = 250
 BEST_VALID_LOSS = float('inf')
+
+### Set Seed
+set_random_seed(SEED)
