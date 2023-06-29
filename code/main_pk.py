@@ -31,5 +31,8 @@ N_LAYERS_RNN = 1
 N_EPOCHS = 250
 BEST_VALID_LOSS = float('inf')
 
-### Set Seed
+### Set seed
 set_random_seed(SEED)
+
+### Load data
+total_input_data, smiles, label, drug, patient_info, route_info, norm_time_info, norm_pk_info = make_input()
