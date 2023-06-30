@@ -3,7 +3,7 @@ import numpy as np
 
 import torch
 
-from Make_NewData_all_time_final.py import *
+from Make_NewData_all_time_final import *
 
 def set_random_seed(seed = 0):
   random.seed(seed)
