@@ -59,7 +59,7 @@ BEST_VALID_LOSS = float('inf')
 set_random_seed(SEED)
 
 ### Load data
-total_input_data, smiles, label, drug, patient_info, route_info, norm_time_info, norm_pk_info = make_input()
+total_input_data, smiles, label, drug, patient_info, route_info, norm_time_info, norm_pk_info = make_input(print_mode=0)
 
 ### CASE1: Use processed dataset
 train_dataloader = torch.load("TRAIN_DATA.pth")
