@@ -139,7 +139,7 @@ Preprocess data
 '''
 ##############################################################################################
 ### Preprocess for timecourses Data
-def preprocess_timecourses(timecourses):
+def preprocess_timecourses(timecourses, print_mode):
     
     ### Extract Required Columns
     df = timecourses[[### KEY(FILTER1)
@@ -159,25 +159,32 @@ def preprocess_timecourses(timecourses):
                     ]]
     
     ### Inital number of data
-    print("Number of Usable Data(Before Filtering): ", len(df), "\n")
+    if (print_mode == 1):
+        print("Number of Usable Data(Before Filtering): ", len(df), "\n")
     
     ### Drop dulicate values by KEY(FILTER1)
-    print("#####   FILTER1   #####")
+    if (print_mode == 1):
+        print("#####   FILTER1   #####")
     df.dropna(subset = ["study_name", "label"], inplace = True)
-    print("Number of Usable Data(After filter1): ", len(df), "\n")
+    if (print_mode == 1):
+        print("Number of Usable Data(After filter1): ", len(df), "\n")
     
     ### Check single dose(FILTER2)
     df["intervention_pk"] = df["intervention_pk"].apply(extract_intervention_pk)
-    print("#####   FILTER2   #####")
+    if (print_mode == 1):
+        print("#####   FILTER2   #####")
     df.dropna(subset = ["intervention_pk"], inplace = True)
     df = df.astype({"intervention_pk": "int64"})
-    print("Number of Usable Data(After filter2): ", len(df), "\n")
+    if (print_mode == 1):
+        print("Number of Usable Data(After filter2): ", len(df), "\n")
     
     ### Check measurement_type_label, tissue_label, unit(FILTER3)
-    print("#####   FILTER3   #####")
+    if (print_mode == 1):
+        print("#####   FILTER3   #####")
     drop_index = df[(df["measurement_type_label"] != "concentration") | (df["tissue_label"] != "plasma") | (df["unit"] != "gram / liter")].index 
     df.drop(drop_index, inplace = True)
-    print("Number of Usable Data(After filter3): ", len(df), "\n")
+    if (print_mode == 1):
+        print("Number of Usable Data(After filter3): ", len(df), "\n")
     
     ### Make pk column(value + mean)
     ### (empty + mean) or (value + empty)
@@ -197,14 +204,15 @@ def preprocess_timecourses(timecourses):
     df.drop(["measurement_type_label", "tissue_label", "unit", "value", "mean", "group_pk", "individual_pk"], axis = 1, inplace = True)
     
     ### Data sumamry
-    print("#####   SUMMARY DF   #####")
-    print(df.head())
-    print("df.columns: ", df.columns, "\n")
+    if (print_mode == 1):
+        print("#####   SUMMARY DF   #####")
+        print(df.head())
+        print("df.columns: ", df.columns, "\n")
     
     return df, group_list, individual_list
 
 ### Preprocess for Group data and Invididual data
-def process_patientdata(patientdb, key_pk, lookup_list):
+def process_patientdata(patientdb, key_pk, lookup_list, print_mode):
     ### Sorted by group_pk data ***IMPORTANT*** -> for binding choice values
     dfPatient = patientdb[[key_pk, "measurement_type", "choice"]]
     ### Extract required group_pk
@@ -241,26 +249,31 @@ def process_patientdata(patientdb, key_pk, lookup_list):
     Patient.at[index[0], "choice"] = choice_string
     
     ### Data sumamry
-    print("#####   SUMMARY GROUP   #####")
-    print(Patient.head())
-    print("df.columns: ", Patient.columns, "\n")
+    if (print_mode == 1):
+        print("#####   SUMMARY GROUP   #####")
+        print(Patient.head())
+        print("df.columns: ", Patient.columns, "\n")
     
     return Patient
 
 ### Preprocess for input_data(combine data)
-def preprocess_inputdata(df, Patient, Drug, dfSMILES, atom_feat, bond_feat):
+def preprocess_inputdata(df, Patient, Drug, dfSMILES, atom_feat, bond_feat, print_mode):
     
     ### Merge PK, Patient, Drug Information
-    print("Number of Usable data: ", len(df))
+    if (print_mode == 1):
+        print("Number of Usable data: ", len(df))
     input_data = pd.merge(df, Patient, how = "left", left_on = "patient_pk", right_on = "patient_pk").dropna(axis = 0)
-    print("Number of Usable data(after merging with Patient data): ", len(input_data))
+    if (print_mode == 1):
+        print("Number of Usable data(after merging with Patient data): ", len(input_data))
     input_data = input_data.merge(Drug, how = "left", left_on = "intervention_pk", right_on = "intervention_pk").dropna(axis = 0)
-    print("Number of data(after merging with Drug data): ", len(input_data))
+    if (print_mode == 1):
+        print("Number of data(after merging with Drug data): ", len(input_data))
 
     ### drop D-glucose drug data
     drop_index = input_data[(input_data["drug"] == "D-glucose")].index
     input_data.drop(drop_index, inplace = True)
-    print("Number of data(without D-glucose data): ", len(input_data)) ### dose info x
+    if (print_mode == 1):
+        print("Number of data(without D-glucose data): ", len(input_data)) ### dose info x
     
     ### SMILES
     dfSMILES = dfSMILES[["drug", "cano_smiles"]]
@@ -282,17 +295,18 @@ def preprocess_inputdata(df, Patient, Drug, dfSMILES, atom_feat, bond_feat):
     patient_info = list(input_data["choice"].dropna().unique())
     drug_route_info = list(input_data["route_label"].dropna().unique())
     drug_list = list(input_data["substance_label"].dropna().unique())
-
-    print("\n###  EMBEDDING  ###")
-    print("--------------------------------------------------------------------")
-    print("patient_info( choice -", len(patient_info),"):\n", patient_info)
-    print("--------------------------------------------------------------------")
-    print("drug_route_info( route -", len(drug_route_info), "):\n", drug_route_info)
-    print("--------------------------------------------------------------------\n")
     
-    print("DGL Process")
-    print("--------------------------------------------------------------------")
-    print("Drug_info( drug -", len(drug_list), "):\n", drug_list)
+    if (print_mode == 1):
+        print("\n###  EMBEDDING  ###")
+        print("--------------------------------------------------------------------")
+        print("patient_info( choice -", len(patient_info),"):\n", patient_info)
+        print("--------------------------------------------------------------------")
+        print("drug_route_info( route -", len(drug_route_info), "):\n", drug_route_info)
+        print("--------------------------------------------------------------------\n")
+        
+        print("DGL Process")
+        print("--------------------------------------------------------------------")
+        print("Drug_info( drug -", len(drug_list), "):\n", drug_list)
     ### Extract unique data of smiles column
     unique_smiles_data = input_data.drop_duplicates(["cano_smiles"])[["cano_smiles"]]
     ### SMILES DATA SET                                                                    
@@ -301,12 +315,13 @@ def preprocess_inputdata(df, Patient, Drug, dfSMILES, atom_feat, bond_feat):
                                  cache_file_path = "test.bin")
     ### smiles list
     smiles_list = smiles_Data.smiles
-    print("--------------------------------------------------------------------\n")
-    
-    print("--------------------------------------------------------------------")
+    if (print_mode == 1):
+        print("--------------------------------------------------------------------\n")
+        print("--------------------------------------------------------------------")
     max_num_total = int(input_data["pk"].apply(count_data).max())
-    print("Max Length of PK Data: ", max_num_total)
-    print("--------------------------------------------------------------------\n")
+    if (print_mode == 1):
+        print("Max Length of PK Data: ", max_num_total)
+        print("--------------------------------------------------------------------\n")
     
     for idx, row in input_data.iterrows():
         ### Set data index and route index
@@ -366,7 +381,7 @@ Main
 '''
 ##############################################################################################
 ### Make Input Data
-def make_input():
+def make_input(print_mode = 0):
     
     ### Warning off
     pd.set_option('mode.chained_assignment',  None)
@@ -388,7 +403,7 @@ def make_input():
     ##################
     '''
     ### preprocess for timecourses and make group, individual list
-    df, group_list, individual_list = preprocess_timecourses(TIMECOURSES)
+    df, group_list, individual_list = preprocess_timecourses(TIMECOURSES, print_mode)
     
     '''
     ##################
@@ -396,7 +411,7 @@ def make_input():
     ##################
     '''
     ### preprocess for group and make patient_info
-    Group = process_patientdata(PKGROUP, "group_pk", group_list)
+    Group = process_patientdata(PKGROUP, "group_pk", group_list, print_mode)
     
     '''
     ##################
@@ -404,7 +419,7 @@ def make_input():
     ##################
     '''
     ### preprocess for individual and make patient_info
-    Individual = process_patientdata(PKINDIVIDUAL, "individual_pk", individual_list)
+    Individual = process_patientdata(PKINDIVIDUAL, "individual_pk", individual_list, print_mode)
     
     '''
     ##################
@@ -414,8 +429,9 @@ def make_input():
     '''
     ### Make Patient dataframe
     Patient = pd.concat([Group, Individual])
-    print("#####   SUMMARY PATIENT   #####")
-    print(Patient.head(), "\n")
+    if (print_mode == 1):
+        print("#####   SUMMARY PATIENT   #####")
+        print(Patient.head(), "\n")
     
     '''
     ##################
@@ -435,8 +451,9 @@ def make_input():
     Drug.dropna(subset = ["dose"], inplace = True)
     Drug = Drug.astype({"dose": "object"})
     
-    print("#####   SUMMARY DRUG   #####")
-    print(Drug.head(), "\n")
+    if (print_mode == 1):
+        print("#####   SUMMARY DRUG   #####")
+        print(Drug.head(), "\n")
     
     '''
     ##################
@@ -446,11 +463,12 @@ def make_input():
     ### Featurizer for SMILES DATA
     atom_feat, bond_feat = make_featurizer()
     ### preprocess for all data and make smiles_data(graphs, feature, ...)
-    input_data, smiles_data, patient_info, route_info, drug_list = preprocess_inputdata(df, Patient, Drug, PKSMILES, atom_feat, bond_feat)
+    input_data, smiles_data, patient_info, route_info, drug_list = preprocess_inputdata(df, Patient, Drug, PKSMILES, atom_feat, bond_feat, print_mode)
     
-    print("#####   SUMMARY INPUT_DATA   #####")
-    print(input_data.head())
-    print(input_data.columns, "\n")
+    if (print_mode == 1):
+        print("#####   SUMMARY INPUT_DATA   #####")
+        print(input_data.head())
+        print(input_data.columns, "\n")
     
     ### Noramlize time data, change unit for pk and dose data
     mean_time = torch.Tensor(input_data["total_time"]).mean()
@@ -492,23 +510,25 @@ def make_input():
     final_total_input = torch.cat([normalized_time, normalized_pk, num_pk, choice, route, dose, total_input_remainder], dim = -1) 
     
     ### Summary
-    print("###  final_total_input  ###")
-    print("--------------------------------------------------------------------")
-    print("Num of final_total_input: ", len(final_total_input))
-    print("Shape of final_total_input: ", final_total_input.shape)
-    print("--------------------------------------------------------------------")
-    print("Number of data by drug")
-    for i in range(len(drug_list)):
-        print("Total", drug_list[i], "Data:", len(input_data[(input_data["substance_label"] == drug_list[i])]))
-        print("SMILES code:", smiles_data.smiles[i], "\n")
-    print("--------------------------------------------------------------------")
+    if (print_mode == 1):
+        print("###  final_total_input  ###")
+        print("--------------------------------------------------------------------")
+        print("Num of final_total_input: ", len(final_total_input))
+        print("Shape of final_total_input: ", final_total_input.shape)
+        print("--------------------------------------------------------------------")
+        print("Number of data by drug")
+        for i in range(len(drug_list)):
+            print("Total", drug_list[i], "Data:", len(input_data[(input_data["substance_label"] == drug_list[i])]))
+            print("SMILES code:", smiles_data.smiles[i], "\n")
+        print("--------------------------------------------------------------------")
     
     ### Additional Data
     ### Label
     label = input_data["study_name"] + "," + input_data["label"]
     
-    print(list(input_data["study_name"].dropna().unique()))
-    print("--------------------------------------------------------------------")
+    if (print_mode == 1):
+        print(list(input_data["study_name"].dropna().unique()))
+        print("--------------------------------------------------------------------")
 
     return final_total_input, smiles_data, label, drug_list, patient_info, route_info, norm_time_info, norm_pk_info
     ### Data with all timepoints
