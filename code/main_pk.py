@@ -62,6 +62,19 @@ set_random_seed(SEED)
 total_input_data, smiles, label, drug, patient_info, route_info, norm_time_info, norm_pk_info = make_input(print_mode=0)
 
 ### CASE1: Use processed dataset
+### Data size: [batch_size(1), 84]
+### normalized_time 0:19
+### normalized_pk 19:38
+### Num_pk(length) 38
+### patient 39
+### route 40
+### dose 41
+### smiles_index 42
+### data_index 43
+### real_time 44:63
+### patient_index 63
+### route_index 64
+### real_pk 65:84
 train_dataloader = torch.load("TRAIN_DATA.pth")
 val_dataloader = torch.load("VAL_DATA.pth")
 test_dataloader = torch.load("TEST_DATA.pth")
