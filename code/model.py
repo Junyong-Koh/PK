@@ -42,7 +42,7 @@ class PKModel(nn.Module):
     ### linear layer
     self.lin_out = nn.Linear(hid_dim, output_dim)
 
-  def forward(self, timepoints, pk_data, input_len, emb_patient_info, drug_route, dose, smiles, teacher_forcing_ratio = 0.5):
+  def forward(self, timepoints, pk_data, input_len, emb_patient, drug_route, dose, smiles, teacher_forcing_ratio = 0.5):
 
     ### Number of timepoints
     input_len = input_len
@@ -62,7 +62,7 @@ class PKModel(nn.Module):
     dose = dose.unsqueeze(1)
 
     ### patient: [batch_size(1), 3], drug_route: [batch_size(1), 1]
-    patient = self.embedding_layer(torch.tensor([emb_patient_info]))
+    patient = self.embedding_layer(torch.tensor([emb_patient]))
     drug_route = torch.tensor([drug_route])
     drug_route = drug_route.unsqueeze(0)
 
@@ -119,3 +119,20 @@ class PKModel(nn.Module):
       timepoint = timepoints[time]
 
     return outputs
+
+### Total Model
+class main_model(nn.Module):
+  def __init__(self, gnn, pkmodel):
+    super().__init__()
+
+    self.gnn = gnn
+    self.pkmodel = pkmodel
+
+  def forward(self, timepoints, pk_data, input_len, emb_patient_info, drug_route_info, dose, graph, atom_feats, bond_feats, teacher_forcing_ratio):
+
+    ### GNN
+    gnn_out = self.gnn(graph, atom_feats, bond_feats) ### Make Graph Feature
+    ### RNN
+    output = self.pkmodel(timepoints, pk_data, input_len, emb_patient_info, drug_route_info, dose, gnn_out, teacher_forcing_ratio)
+
+    return gnn_out, output
