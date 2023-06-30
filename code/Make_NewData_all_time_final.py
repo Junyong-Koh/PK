@@ -485,7 +485,7 @@ def make_input(print_mode = 0):
     
     dose = torch.Tensor(input_data["dose"]) 
     
-    choice = torch.Tensor(input_data["choice"])
+    patient = torch.Tensor(input_data["choice"])
     
     route = torch.Tensor(input_data["route_label"])
 
@@ -495,10 +495,10 @@ def make_input(print_mode = 0):
     total_input_remainder = torch.Tensor(input_data["smiles_index"] + input_data["data_index"] + input_data["total_time"] + input_data["patient_index"] + input_data["route_index"] + input_data["total_pk"]) 
     
     ### final_total_input
-    ### time 0:19
+    ### normalized_time 0:19
     ### pk 19:38
-    ### Num_pk 38
-    ### choice 39
+    ### Num_pk(length) 38
+    ### patient 39
     ### route 40
     ### dose 41
     ### smiles_index 42
@@ -507,7 +507,7 @@ def make_input(print_mode = 0):
     ### patient_index 63
     ### route_index 64
     ### real_pk 65:84
-    final_total_input = torch.cat([normalized_time, normalized_pk, num_pk, choice, route, dose, total_input_remainder], dim = -1) 
+    final_total_input = torch.cat([normalized_time, normalized_pk, num_pk, patient, route, dose, total_input_remainder], dim = -1) 
     
     ### Summary
     if (print_mode == 1):
