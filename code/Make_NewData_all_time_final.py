@@ -43,7 +43,7 @@ def extract_intervention_pk(string):
     string = string[1:-1]
     ### check if "," exists
     if not "," in string:
-        return int(string)
+        return int(string) ### -> single dose
     else:
         return 
          
@@ -473,7 +473,6 @@ def make_input(print_mode = 0):
     ### Noramlize time data, change unit for pk and dose data
     mean_time = torch.Tensor(input_data["total_time"]).mean()
     std_time = torch.Tensor(input_data["total_time"]).std()
-    norm_time_info = [mean_time, std_time]
     normalized_time = (torch.Tensor(input_data["total_time"]) - mean_time) / std_time
     
     total_pk = torch.log(torch.Tensor(input_data["total_pk"]) * 1000000) ### g -> ug -> log
@@ -530,5 +529,5 @@ def make_input(print_mode = 0):
         print(list(input_data["study_name"].dropna().unique()))
         print("--------------------------------------------------------------------")
 
-    return final_total_input, smiles_data, label, drug_list, patient_info, route_info, norm_time_info, norm_pk_info
+    return final_total_input, smiles_data, label, drug_list, patient_info, route_info, norm_pk_info
     ### Data with all timepoints
