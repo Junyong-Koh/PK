@@ -396,6 +396,6 @@ def test(model, model_path, test_data, smiles, label_title, drug_title, patient_
         axes[int((batch_id%10)/5), (batch_id%10)%5].set_title(label_title[int(data_index)] + "\n" + drug_title[smiles_index] + "\n" + patient_info[int(patient_index)] + ", " + route_info[int(route_index)] + "\n" + str(dose) +  ", " + str(int(data_index)))
 
   plt.show()
-  print("R2SCORE: ", sum(acc_list) / len(acc_list))
+  #print("R2SCORE: ", sum(acc_list) / len(acc_list))
   #total_predicted = total_predicted.contiguous().view(-1)
   #total_label = total_label.contiguous().view(-1)
