@@ -1,0 +1,87 @@
+,study_sid,study_name,intervention_pk,raw_pk,normed,name,route,route_label,form,form_label,application,application_label,time,time_end,time_unit,measurement_type,measurement_type_label,calculation_type,calculation_type_label,choice,choice_label,substance,substance_label,value,mean,median,min,max,sd,se,cv,unit,dose
+0,PKDB00195,Clements1984,48,47,TRUE,paracetamol_iv_5mg/kg,iv,intravenous (iv),solution,solution,constant-infusion,constant infusion,2,,hr,dosing,dosing,,,,,apap,paracetamol,0.005,,,,,,,,gram / kilogram,0.362
+1,PKDB00195,Clements1984,50,49,TRUE,paracetamol_iv_20mg/kg,iv,intravenous (iv),solution,solution,constant-infusion,constant infusion,2,,hr,dosing,dosing,,,,,apap,paracetamol,0.02,,,,,,,,gram / kilogram,1.448
+2,PKDB00195,Clements1984,52,51,TRUE,paracetamol_5mg/kg,oral,oral (po),solution,solution,constant-infusion,constant infusion,2,,hr,dosing,dosing,,,,,apap,paracetamol,0.005,,,,,,,,gram / kilogram,
+3,PKDB00195,Clements1984,54,53,TRUE,paracetamol_20mg/kg,oral,oral (po),solution,solution,constant-infusion,constant infusion,2,,hr,dosing,dosing,,,,,apap,paracetamol,0.02,,,,,,,,gram / kilogram,
+4,PKDB00195,Clements1984,56,55,TRUE,coca cola,,,,,,,2,,hr,qualitative-dosing,qualitative dosing,,,,,caf,caffeine (137X),,,,,,,,,,
+5,PKDB00131,Divoll1982,84,81,TRUE,iv,iv,intravenous (iv),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,0.65,,,,,,,,gram,0.65
+6,PKDB00131,Divoll1982,85,82,TRUE,tablet,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,0.65,,,,,,,,gram,0.65
+7,PKDB00131,Divoll1982,86,83,TRUE,elixir,oral,oral (po),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,0.65,,,,,,,,gram,0.65
+8,PKDB00022,Albert1974,109,107,TRUE,A,oral,oral (po),capsule,capsule,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,0.65,,,,,,,,gram,0.65
+9,PKDB00022,Albert1974,110,108,TRUE,B,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,0.65,,,,,,,,gram,0.65
+10,PKDB00124,Perucca1979,120,119,TRUE,paracetamol oral,oral,oral (po),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,1,,,,,,,,gram,
+11,PKDB00124,Perucca1979,122,121,TRUE,paracetamol iv,iv,intravenous (iv),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,1,,,,,,,,gram,
+12,PKDB00119,Malan1985,190,189,TRUE,8.00h,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,1,,,,,,,,gram,
+13,PKDB00119,Malan1985,192,191,TRUE,14.00h,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,1,,,,,,,,gram,
+14,PKDB00119,Malan1985,194,193,TRUE,20.00h,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,1,,,,,,,,gram,
+15,PKDB00024,Baraka1990,258,257,TRUE,paracetamol,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,1.5,,,,,,,,gram,1.5
+16,PKDB00024,Baraka1990,260,259,TRUE,antipyrine,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,0,,hr,dosing,dosing,,,,,antipyrine,antipyrine,0.6,,,,,,,,gram,
+17,PKDB00024,Baraka1990,262,261,TRUE,propanolol,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,0,,hr,dosing,dosing,,,,,propanolol,propanolol,0.006666667,,,,,,,,gram / hour,
+18,PKDB00021,Shinoda2007,266,265,TRUE,paracetamol600mg,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,0.6,,,,,,,,gram,
+19,PKDB00021,Shinoda2007,268,267,TRUE,paracetamol800mg,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,0.8,,,,,,,,gram,
+20,PKDB00021,Shinoda2007,270,269,TRUE,paracetamol1000mg,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,1,,,,,,,,gram,1
+21,PKDB00151,Prescott1981,394,393,TRUE,paracetamol,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,0.02,,,,,,,,gram / kilogram,1.38
+22,PKDB00151,Prescott1981,396,395,TRUE,antipyrine,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,antipyrine,antipyrine,0.018,,,,,,,,gram / kilogram,
+23,PKDB00151,Prescott1981,398,397,TRUE,coca cola,,,solution,solution,,,0,,hr,qualitative-dosing,qualitative dosing,,,,,caf,caffeine (137X),,,,,,,,,,
+24,PKDB00125,Renner2007,482,481,TRUE,acetaminophen,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,1,,,,,,,,gram,1
+25,PKDB00125,Renner2007,484,483,TRUE,caffeine,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,caf,caffeine (137X),0.13,,,,,,,,gram,
+26,PKDB00121,Ganetsky2013,654,653,TRUE,solid,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,0.015,,,,,,,,gram / kilogram,0.9
+27,PKDB00121,Ganetsky2013,656,655,TRUE,liquid,oral,oral (po),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,apap,paracetamol,0.015,,,,,,,,gram / kilogram,0.9
+28,PKDB00154,Liukas2011,652,651,TRUE,paracetamol1000mg_iv,iv,intravenous (iv),solution,solution,constant-infusion,constant infusion,0,,min,dosing,dosing,,,,,apap,paracetamol,1,,,,,,,,gram,1
+29,PKDB00063,Turpault2009,994,993,TRUE,Dcaf,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,0,,hr,dosing,dosing,,,,,caf,caffeine (137X),0.1,,,,,,,,gram,0.1
+30,PKDB00063,Turpault2009,996,995,TRUE,Dwar,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,warfarin,warfarin,0.01,,,,,,,,gram,
+31,PKDB00063,Turpault2009,998,997,TRUE,Dome,oral,oral (po),capsule,capsule,single-dose,single dose,0,,hr,dosing,dosing,,,,,omeprazole,omeprazole,0.02,,,,,,,,gram,
+32,PKDB00063,Turpault2009,1000,999,TRUE,Dmet,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,metoprolol,metoprolol,0.1,,,,,,,,gram,0.1
+33,PKDB00063,Turpault2009,1002,1001,TRUE,Dmid,oral,oral (po),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,midazolam,midazolam,3.00E-05,,,,,,,,gram / kilogram,
+34,PKDB00106,Shord2009,1824,1823,TRUE,COD,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,0,,hr,dosing,dosing,,,,,cod-s,codeine sulfate anhydrous,0.03,,,,,,,,gram,0.03
+35,PKDB00091,Chen1991,1806,1805,TRUE,DMT,,,,,,,0,,hr,qualitative-dosing,qualitative dosing,,,,,dmt,dextromethorphan,,,,,,,,,,
+36,PKDB00091,Chen1991,1808,1807,TRUE,COD,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.03,,,,,,,,gram,0.03
+37,PKDB00091,Chen1991,1816,1809,TRUE,COD_M1,oral,oral (po),tablet,tablet,single-dose,single dose,-48,,hr,dosing,dosing,,,,,cod,codeine,0.03,,,,,,,,gram,
+38,PKDB00091,Chen1991,1817,1810,TRUE,COD_M2,oral,oral (po),tablet,tablet,single-dose,single dose,-40,,hr,dosing,dosing,,,,,cod,codeine,0.03,,,,,,,,gram,
+39,PKDB00091,Chen1991,1818,1811,TRUE,COD_M3,oral,oral (po),tablet,tablet,single-dose,single dose,-32,,hr,dosing,dosing,,,,,cod,codeine,0.03,,,,,,,,gram,
+40,PKDB00091,Chen1991,1819,1812,TRUE,COD_M4,oral,oral (po),tablet,tablet,single-dose,single dose,-24,,hr,dosing,dosing,,,,,cod,codeine,0.03,,,,,,,,gram,
+41,PKDB00091,Chen1991,1820,1813,TRUE,COD_M5,oral,oral (po),tablet,tablet,single-dose,single dose,-16,,hr,dosing,dosing,,,,,cod,codeine,0.03,,,,,,,,gram,
+42,PKDB00091,Chen1991,1821,1814,TRUE,COD_M6,oral,oral (po),tablet,tablet,single-dose,single dose,-8,,hr,dosing,dosing,,,,,cod,codeine,0.03,,,,,,,,gram,
+43,PKDB00091,Chen1991,1822,1815,TRUE,COD_M7,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,cod,codeine,0.03,,,,,,,,gram,
+44,PKDB00114,Yue1991,1872,1871,TRUE,COD,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,0.05
+45,PKDB00114,Yue1991,1874,1873,TRUE,DEB,oral,oral (po),,,,,,,,qualitative-dosing,qualitative dosing,,,,,deb,debrisoquine,0.01,,,,,,,,gram,
+46,7983238,Band1994,1891,1887,TRUE,COD_IRC_1,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.06,,,,,,,,gram,0.06
+47,7983238,Band1994,1892,1888,TRUE,COD_IRC,oral,oral (po),tablet,tablet,multiple-dose,multiple dose,,,,qualitative-dosing,qualitative dosing,,,,,cod-p,codeine phosphate,0.54,,,,,,,,gram,
+48,7983238,Band1994,1893,1889,TRUE,COD_SRC_1,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,cod,codeine,0.15,,,,,,,,gram,0.15
+49,PKDB00115,Yue1991a,1900,1899,TRUE,COD,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,0,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,0.05
+50,PKDB00115,Yue1991a,1902,1901,TRUE,DEB,oral,oral (po),,,,,,,,qualitative-dosing,qualitative dosing,,,,,deb,debrisoquine,0.01,,,,,,,,gram,
+51,PKDB00115,Yue1991a,1912,1903,TRUE,COD0,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,0,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,
+52,PKDB00115,Yue1991a,1913,1904,TRUE,COD-6,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,-6,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,
+53,PKDB00115,Yue1991a,1914,1905,TRUE,COD-12,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,-12,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,
+54,PKDB00115,Yue1991a,1915,1906,TRUE,COD-18,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,-18,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,
+55,PKDB00115,Yue1991a,1916,1907,TRUE,COD-24,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,-24,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,
+56,PKDB00115,Yue1991a,1917,1908,TRUE,COD-30,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,-30,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,
+57,PKDB00115,Yue1991a,1918,1909,TRUE,COD-36,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,-36,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,
+58,PKDB00115,Yue1991a,1919,1910,TRUE,COD-42,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,-42,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,
+59,PKDB00115,Yue1991a,1920,1911,TRUE,COD-48,oral,oral (po),nr-form,Not reported (administration form),single-dose,single dose,-48,,hr,dosing,dosing,,,,,cod-p,codeine phosphate,0.05,,,,,,,,gram,
+60,PKDB00094,Kim2002,1970,1969,TRUE,COD_low,oral,oral (po),capsule,capsule,single-dose,single dose,0,,hr,dosing,dosing,,,,,cod-s,codeine sulfate anhydrous,0.000857,,,,,,,,gram / kilogram,0.067
+61,PKDB00094,Kim2002,1972,1971,TRUE,COD_high,oral,oral (po),capsule,capsule,single-dose,single dose,0,,hr,dosing,dosing,,,,,cod-s,codeine sulfate anhydrous,0.001714,,,,,,,,gram / kilogram,0.134
+62,1623898,Sindrup1992,2020,2019,TRUE,COD,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,cod,codeine,0.1,,,,,,,,gram,0.1
+63,1623898,Sindrup1992,2022,2021,TRUE,QUI,oral,oral (po),tablet,tablet,single-dose,single dose,-3,,hr,dosing,dosing,,,,,qui,quinidine,0.2,,,,,,,,gram,
+64,1623898,Sindrup1992,2024,2023,TRUE,SPAR,,,,,single-dose,single dose,,,,qualitative-dosing,qualitative dosing,,,,,sparteine-sulfate,sparteine sulfate,,,,,,,,,,
+65,PKDB00081,Knop2007,2594,2593,TRUE,isoglc,,,,,,,,,,glucose-metabolism-challenge,glucose metabolism challenge,,,isoglycemic-glucose-infusion,isoglycemic glucose infusion,,,,,,,,,,,,
+66,PKDB00081,Knop2007,2596,2595,TRUE,ogtt,oral,oral (po),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,glucose,D-glucose,50,,,,,,,,gram,
+67,PKDB00075,Firth1986,2628,2627,TRUE,Dglc,oral,oral (po),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,glucose,D-glucose,50,,,,,,,,gram,
+68,PKDB00086,Yang2015,2642,2641,TRUE,ogtt,oral,oral (po),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,glucose,D-glucose,75,,,,,,,,gram,
+69,PKDB00067,Bergman1981,2650,2649,TRUE,glciv,iv,intravenous (iv),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,glucose,D-glucose,0.3,,,,,,,,gram / kilogram,
+70,PKDB00072,Ferrannini1979,2656,2655,TRUE,glciv,iv,intravenous (iv),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,glucose,D-glucose,0.33,,,,,,,,g/kg,
+71,PKDB00083,Mitrakou1992,2658,2657,TRUE,glc,oral,oral (po),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,glucose,D-glucose,1,,,,,,,,g/kg,
+72,PKDB00325,Ma2009,3234,3233,TRUE,mid_iv,iv,intravenous (iv),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,midazolam,midazolam,2.50E-05,,,,,,,,gram / kilogram,
+73,PKDB00248,Link2008,3351,3349,TRUE,MID_po,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,midazolam,midazolam,0.0075,,,,,,,,gram,0.0075
+74,PKDB00248,Link2008,3352,3350,TRUE,MID_iv,iv,intravenous (iv),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,midazolam,midazolam,0.002,,,,,,,,gram,0.002
+75,PKDB00248,Link2008,3354,3353,TRUE,RIF,oral,oral (po),tablet,tablet,multiple-dose,multiple dose,-6,,day,qualitative-dosing,qualitative dosing,,,,,rifampicin,rifampicin,0.025,,,,,,,,gram / hour,
+76,PKDB00252,Kawaguchi-Suzuki2017,3388,3387,TRUE,MID,oral,oral (po),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,midazolam,midazolam,0.005,,,,,,,,gram,0.05
+77,PKDB00252,Kawaguchi-Suzuki2017,3391,3389,TRUE,GRAP_regular,oral,oral (po),solution,solution,multiple-dose,multiple dose,-3,,day,qualitative-dosing,qualitative dosing,,,,,grapefruit-juice,grapefruit juice,0.008333333,,,,,,,,gram / hour,
+78,PKDB00252,Kawaguchi-Suzuki2017,3392,3390,TRUE,GRAP_hybrid,oral,oral (po),solution,solution,multiple-dose,multiple dose,-3,,day,qualitative-dosing,qualitative dosing,,,,,grapefruit-juice,grapefruit juice,0.008333333,,,,,,,,gram / hour,
+79,PKDB00178,Heizmann1983,3534,3533,TRUE,iv,iv,intravenous (iv),solution,solution,single-dose,single dose,0,,hr,dosing,dosing,,,,,midazolam,midazolam,0.00015,,,,,,,,gram / kilogram,0.01
+80,PKDB00178,Heizmann1983,3538,3535,TRUE,po10,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,midazolam,midazolam,0.01,,,,,,,,gram,0.01
+81,PKDB00178,Heizmann1983,3539,3536,TRUE,po20,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,midazolam,midazolam,0.02,,,,,,,,gram,0.02
+82,PKDB00178,Heizmann1983,3540,3537,TRUE,po40,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,midazolam,midazolam,0.04,,,,,,,,gram,0.04
+83,PKDB00323,Shord2010,3563,3561,TRUE,MID_po,oral,oral (po),solution,solution,single-dose,single dose,0,,day,dosing,dosing,,,,,midazolam,midazolam,0.002,,,,,,,,gram,0.002
+84,PKDB00323,Shord2010,3564,3562,TRUE,MID_iv,iv,intravenous (iv),solution,solution,single-dose,single dose,0,,day,dosing,dosing,,,,,midazolam,midazolam,2.50E-05,,,,,,,,gram / kilogram,0.00176
+85,PKDB00323,Shord2010,3566,3565,TRUE,CLOT,oral,oral (po),tablet,tablet,single-dose,single dose,-5,,day,dosing,dosing,,,,,clotrimazole,clotrimazole,0.03,,,,,,,,gram,

@@ -1,0 +1,24 @@
+﻿drug,cano_smiles,check_list,synonums
+paracetamol,CC(=O)NC1=CC=C(C=C1)O,PubChem,
+codeine,CN1CCC23C4C1CC5=C2C(=C(C=C5)OC)OC3C(C=C4)O,PubChem,
+1-hydroxymidazolam,C1C2=CN=C(N2C3=C(C=C(C=C3)Cl)C(=N1)C4=CC=CC=C4F)CO,PubChem,
+1-hydroxymidazolam β-D-glucuronide,C1C2=CN=C(N2C3=C(C=C(C=C3)Cl)C(=N1)C4=CC=CC=C4F)COC5C(C(C(C(O5)C(=O)O)O)O)O,PubChem,Mdz-glucuronide
+caffeine (137X),CN1C=NC2=C1C(=O)N(C(=O)N2C)C,PubChem,caffeine
+codeine sulfate anhydrous,CN1CCC23C4C1CC5=C2C(=C(C=C5)OC)OC3C(C=C4)O.CN1CCC23C4C1CC5=C2C(=C(C=C5)OC)OC3C(C=C4)O.OS(=O)(=O)O,PubChem,
+codeine-6-glucuronide,CN1CCC23C4C1CC5=C2C(=C(C=C5)OC)OC3C(C=C4)OC6C(C(C(C(O6)C(=O)O)O)O)O,PubChem,
+D-glucopyranose,C(C1C(C(C(C(O1)O)O)O)O)O,PubChem,
+glucagon,CC(C)CC(C(=O)NC(CCSC)C(=O)NC(CC(=O)N)C(=O)NC(C(C)O)C(=O)O)NC(=O)C(CC1=CNC2=CC=CC=C21)NC(=O)C(CCC(=O)N)NC(=O)C(C(C)C)NC(=O)C(CC3=CC=CC=C3)NC(=O)C(CC(=O)O)NC(=O)C(CCC(=O)N)NC(=O)C(C)NC(=O)C(CCCNC(=N)N)NC(=O)C(CCCNC(=N)N)NC(=O)C(CO)NC(=O)C(CC(=O)O)NC(=O)C(CC(C)C)NC(=O)C(CC4=CC=C(C=C4)O)NC(=O)C(CCCCN)NC(=O)C(CO)NC(=O)C(CC5=CC=C(C=C5)O)NC(=O)C(CC(=O)O)NC(=O)C(CO)NC(=O)C(C(C)O)NC(=O)C(CC6=CC=CC=C6)NC(=O)C(C(C)O)NC(=O)CNC(=O)C(CCC(=O)N)NC(=O)C(CO)NC(=O)C(CC7=CN=CN7)N,PubChem,
+metoprolol,CC(C)NCC(COC1=CC=C(C=C1)CCOC)O,PubChem,
+midazolam,CC1=NC=C2N1C3=C(C=C(C=C3)Cl)C(=NC2)C4=CC=CC=C4F,PubChem,
+morphine,CN1CCC23C4C1CC5=C2C(=C(C=C5)O)OC3C(C=C4)O,PubChem,
+morphine-3-glucuronide,CN1CCC23C4C1CC5=C2C(=C(C=C5)OC6C(C(C(C(O6)C(=O)O)O)O)O)OC3C(C=C4)O,PubChem,
+morphine-6-glucuronide,CN1CCC23C4C1CC5=C2C(=C(C=C5)O)OC3C(C=C4)OC6C(C(C(C(O6)C(=O)O)O)O)O,PubChem,
+norcodeine,COC1=C2C3=C(CC4C5C3(CCN4)C(O2)C(C=C5)O)C=C1,PubChem,
+normorphine,C1CNC2CC3=C4C15C2C=CC(C5OC4=C(C=C3)O)O,PubChem,
+paracetamol cysteine,CC(=O)NC1=CC=C(C=C1)OC(=O)C(CS)N,PubChem,
+paracetamol glucuronide,CC(=O)NC1=CC=C(C=C1)OC2C(C(C(C(O2)C(=O)O)O)O)O,PubChem,
+paracetamol mercapturate,CC(=O)NC1=CC=C(C=C1)OC(=O)C(CS)NC(=O)C,PubChem,
+paracetamol sulfate,CC(=O)NC1=CC=C(C=C1)OS(=O)(=O)O,PubChem,
+paraxanthine (17X),CN1C=NC2=C1C(=O)N(C(=O)N2)C,PubChem,Paraxanthine
+D-glucose,C(C1C(C(C(C(O1)O)O)O)O)O,PubChem,
+codeine phosphate,CN1CCC23C4C1CC5=C2C(=C(C=C5)OC)OC3C(C=C4)O.OP(=O)(O)O,PubChem,
