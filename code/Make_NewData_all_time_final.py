@@ -387,15 +387,15 @@ def make_input(print_mode = 0):
     pd.set_option('mode.chained_assignment',  None)
 
     ### TIMECOURSES
-    TIMECOURSES = check_csv_file("timecourses.csv", 0)
+    TIMECOURSES = check_csv_file("../DATA/timecourses.csv", 0)
     ### PKGROUP
-    PKGROUP = check_csv_file("groups.csv",0)
+    PKGROUP = check_csv_file("../DATA/groups.csv",0)
     ### PKINDIVIDUAL
-    PKINDIVIDUAL = check_csv_file("individuals.csv",0)
+    PKINDIVIDUAL = check_csv_file("../DATA/individuals.csv",0)
     ### PKDRUG
-    PKDRUG = check_csv_file("interventions.csv", 0)
+    PKDRUG = check_csv_file("../DATA/interventions.csv", 0)
     ### PKSMILES
-    PKSMILES = check_csv_file("smiles.csv", 0)
+    PKSMILES = check_csv_file("../DATA/smiles.csv", 0)
 
     '''
     ##################
