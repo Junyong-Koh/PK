@@ -365,7 +365,7 @@ def test(model, model_path, test_data, smiles, label_title, drug_title, patient_
         
         real_label = batch_data[:,65:65+input_len]
 
-        acc_list.append(r2score(predicted[0, 1:]/1000000, real_label[0, 1:]))
+        # acc_list.append(r2score(predicted[0, 1:]/1000000, real_label[0, 1:]))
 
         ### real_timepoints: [batch_size(1), input_len]
         real_timepoints = batch_data[:, 44:44+input_len]
