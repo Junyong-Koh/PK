@@ -341,31 +341,31 @@ def test(model, model_path, test_data, smiles, label_title, drug_title, patient_
         gnn_out, predicted = model(timepoints, pk_data, input_len, emb_patient_info, drug_route, dose, bg, atom_feats, bond_feats, teacher_forcing_ratio = 1)
 
         ### predicted: [pks(19), batch_size(1)] -> [pks(num_pks), batch_size(1)] -> [batch_size(1), pks(num_pks)]
-        ### label: [batch_size(1), pks(19)] -> [batch_size(1), pks(num_pks)]
         predicted = torch.transpose(predicted[:input_len], 0, 1)
-        label = batch_data[:,19:19+input_len]
+        ### Solve noramliazation
+        predicted = predicted * norm_pk_info[1] + norm_pk_info[0]
+        predicted = torch.exp(predicted) / 1000000
+        
+        ### real_label: [batch_size(1), input_len]
+        real_label = batch_data[:,65:65+input_len]
 
         if (batch_id == 0):
-          ### (1, input_len-1)
-          total_predicted = predicted[0, 1:]
-          ### (1, input_len-1)
-          total_label = label[0, 1:]
+          total_predicted = predicted
+          total_label = real_label
+          ### Accuracy
+          acc_list.append(r2score(real_label[0], predicted[0]))
+          
+          ### Set figure
           f, axes = plt.subplots(2, 5)
           f.set_size_inches((20, 10))
           plt.subplots_adjust(wspace = 0.3, hspace = 0.3)
           
         else:
           ### Concat Data
-          total_predicted = torch.cat([total_predicted, predicted[0, 1:]], dim = -1)
-          total_label = torch.cat([total_label, label[0, 1:]], dim = -1)
-
-        ### Solve noramliazation
-        predicted = predicted * norm_pk_info[1] + norm_pk_info[0]
-        predicted = torch.exp(predicted)
-        
-        real_label = batch_data[:,65:65+input_len]
-
-        # acc_list.append(r2score(predicted[0, 1:]/1000000, real_label[0, 1:]))
+          total_predicted = torch.cat([total_predicted, predicted], dim = -1)
+          total_label = torch.cat([total_label, real_label], dim = -1)
+          ### Accuracy
+          acc_list.append(r2score(real_label[0], predicted[0]))
 
         ### real_timepoints: [batch_size(1), input_len]
         real_timepoints = batch_data[:, 44:44+input_len]
@@ -389,13 +389,11 @@ def test(model, model_path, test_data, smiles, label_title, drug_title, patient_
         x = real_timepoints[0].tolist()
         y1 = real_label[0]
         y1 = y1.tolist()
-        y2 = predicted[0] / 1000000
+        y2 = predicted[0]
         y2 = y2.tolist()
 
         axes[int((batch_id%10)/5), (batch_id%10)%5].plot(x, y1, "ro-", x, y2, "bo-")
         axes[int((batch_id%10)/5), (batch_id%10)%5].set_title(label_title[int(data_index)] + "\n" + drug_title[smiles_index] + "\n" + patient_info[int(patient_index)] + ", " + route_info[int(route_index)] + "\n" + str(dose) +  ", " + str(int(data_index)))
 
   plt.show()
-  #print("R2SCORE: ", sum(acc_list) / len(acc_list))
-  #total_predicted = total_predicted.contiguous().view(-1)
-  #total_label = total_label.contiguous().view(-1)
+  print("R2SCORE(VER1): ", sum(acc_list) / len(acc_list))
